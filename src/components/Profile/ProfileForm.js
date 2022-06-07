@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
 import classes from "./ProfileForm.module.css";
 
+require("dotenv").config();
+
 const ProfileForm = () => {
   const history = useHistory();
   const newPasswordInputRef = useRef();
@@ -14,10 +16,12 @@ const ProfileForm = () => {
 
     const enteredNewPassword = newPasswordInputRef.current.value;
 
+    const apiKey = process.env.REACT_APP_API_KEY;
+
     // add validation
 
     fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyCi3v9yjep-ua-gW_dg5vp7PdDVaDdqhHY",
+      `https://identitytoolkit.googleapis.com/v1/accounts:update?key=${apiKey}`,
       {
         method: "POST",
         body: JSON.stringify({

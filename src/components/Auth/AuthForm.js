@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
 import classes from "./AuthForm.module.css";
 
+require("dotenv").config();
+
 const AuthForm = () => {
   const history = useHistory();
   const emailInputRef = useRef();
@@ -24,16 +26,18 @@ const AuthForm = () => {
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
 
+    const apiKey = process.env.REACT_APP_API_KEY;
+
     // optional: Add validation
 
     setIsLoading(true);
     let url = "";
     if (isLogin) {
       url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCi3v9yjep-ua-gW_dg5vp7PdDVaDdqhHY";
+        `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`;
     } else {
       url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCi3v9yjep-ua-gW_dg5vp7PdDVaDdqhHY";
+        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`;
     }
 
     fetch(url, {
