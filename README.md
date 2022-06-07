@@ -111,7 +111,7 @@ To get a local copy up and running follow these simple steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-In this you can sign up or login to access to the app, then there you are also free to change your password or logout yourself, otherwise you will be logged out after some time, this time doesn't refresh with activity in the page.
+In this project you can sign up or login to access to the app, then there you are also free to change your password or logout yourself, otherwise you will be logged out after some time, this time doesn't refresh with activity in the page.
 
 ### Run App
   * Server
