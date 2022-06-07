@@ -94,7 +94,7 @@ To get a local copy up and running follow these simple steps.
   ```
 
 ### Installation
-
+ 
 1. Clone the repo
    ```sh
    git clone https://github.com/JavierMendez-Coder/react-auth.git
@@ -102,6 +102,10 @@ To get a local copy up and running follow these simple steps.
 2. Install NPM packages
    ```sh
    npm install
+   ```
+3. Enter your API in `.env`
+   ```env
+   REACT_APP_API_KEY="ENTER YOUR API"
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
